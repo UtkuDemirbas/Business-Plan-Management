@@ -1,0 +1,118 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="BPM.master.cs" Inherits="BusinessPlanManagement.BPM" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="TableFiles/vendor/bootstrap/css/bootstrap.min.css?v=1" />
+    <link rel="stylesheet" type="text/css" href="TableFiles/images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <!--===============================================================================================-->
+    <link type="text/css" href="TableFiles/vendor/animate/animate.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link type="text/css" href="TableFiles/vendor/select2/select2.min.css" rel="stylesheet" />
+    <link type="text/css" href="vendor/select2/select2.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link type="text/css" href="TableFiles/fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="TableFiles/vendor/perfect-scrollbar/perfect-scrollbar.css" />
+    <!--===============================================================================================-->
+    <link type="text/css" href="TableFiles/css/main.css?v=1" rel="stylesheet" />
+    <link type="text/css" href="TableFiles/css/util.css?v=1" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link href="Cardcss/css/matrix-media.css" rel="stylesheet" />
+    <link href="Cardcss/dist/css/style.css?v=1" rel="stylesheet" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+</head>
+<body>
+    <form id="MasterForm" runat="server" style="background-color: #d1d1d1;">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #36304a">
+            <a class="navbar-brand" href="https://www.klimasan.com.tr" target="_blank">
+                <img src="Images/KlimasanLogo.png" alt="Klimasan Logo" class="img-responsive logo" style="width: 130px" runat="server"></a>
+            <button class="navbar-toggler bg-light" data-toggle="collapse" id="ToggleButton" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav  mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Table.aspx" style="color: white"><i class="fas fa-bell"></i><span>Notifications</span> </a>
+                    </li>
+                    <% if ((int)Session["RoleId"] == 1)
+                        {%>
+                    <li class="nav-item">
+                        <a class="nav-link" href="AddNotification.aspx" style="color: white"><i class="fas fa-pencil-alt"></i><span>Add Notifications</span></a>
+                    </li>
+                    <%
+                        }
+
+                    %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="UpdateLoginInformation.aspx" style="color: white"><i class="fas fa-user"></i><span>Update your Information</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <asp:LinkButton ID="LogOut" CssClass="nav-link" Style="color: white" runat="server" OnClick="LogOut_Click"><i class="fas fa-sign-out-alt"></i><span>LogOut</span></asp:LinkButton>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+        <div>
+            <asp:ContentPlaceHolder ID="AllPageHolder" runat="server" />
+        </div>
+    </form>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!--===============================================================================================-->
+    <script src="TableFiles/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="TableFiles/vendor/bootstrap/js/popper.js"></script>
+    <script src="TableFiles/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="TableFiles/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="TableFiles/js/main.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/daterangepicker/moment.min.js"></script>
+    <script src="vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script src="TableFiles/js/main.js"></script>
+    <script src="js/main.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
